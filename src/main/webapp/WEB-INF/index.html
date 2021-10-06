@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measurements</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../resources/processing.js" charset="UTF-8">
+    </script>
+</head>
+<body onload="loadContent()">
+<h1 class="title">Measurements</h1>
+<table class="main-table" >
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Type</th>
+        <th scope="col">Configuration</th>
+        <th scope="col">Quantity of sec</th>
+        <th scope="col">Height</th>
+        <th scope="col">Start level</th>
+        <th scope="col">Organization</th>
+        <th scope="col">Reg date</th>
+
+    </tr>
+    </thead>
+    <tbody id="mainTable">
+    </tbody>
+</table>
+<button style="margin-bottom: 15px" type="button" class="btn btn-info" onclick="clickCreate()">Create</button>
+<form style="background-color: #E9ECEF; padding: 20px; border-radius: 10px; display: none" id="createButton">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputNameNew">Name</label>
+            <input type="text" class="form-control" id="inputNameNew" placeholder="Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddressNew">Title</label>
+            <input type="text" class="form-control" id="inputAddressNew" placeholder="Title">
+        </div>
+    </div>
+    <div class="form-row">
+
+        <div class="form-group col-md-3" style="padding: 0px 10px">
+            <label>Registration date</label>
+            <div class="form-row">
+                <input type="date" class="form-control" id="inputRegistrationNew">
+            </div>
+        </div>
+        <div class="form-group col-md-3" style="padding: 0px 10px">
+            <label>Height</label>
+            <div class="form-row">
+                <input type="number" min="0" step="1000" class="form-control" id="inputExperienceNew">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3" style="padding: 0px 10px">
+            <label for="inputTypeNew">Race</label>
+            <select id="inputTypeNew" class="form-control">
+                <option selected>Tower</option>
+                <option>Mast</option>
+                <option>Pole</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3" style="padding: 0px 10px">
+            <label for="inputConfigNew">Profession</label>
+            <select id="inputConfigNew" class="form-control">
+                <option selected>4</option>
+                <option>3</option>
+                <option>0</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="button" onclick="processCreate('${pageContext.request.contextPath}')" class="btn btn-success">
+        Create
+    </button>
+</form>
+
+</body>
+</html>
